@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Calculator</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+
+<!-- Jumbotron for Title -->
+<div class="jumbotron">
+    <h1 class="text-center">jQuery Calculator</h1>
+    <h3 class="text-center">Perform basic mathematic operations using the power of jQuery!</h3>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <!-- Calculator Panel -->
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Calculator</h3>
+                </div>
+
+                <div class="panel-body">
+                            <button id="button1" class="btn btn-primary number" value=1><h1>1</h1></button>
+                            <button id="button2" class="btn btn-primary number" value=2><h1>2</h1></button>
+                            <button id="button3" class="btn btn-primary number" value=3><h1>3</h1></button>
+                            <button id="buttonPlus" class="btn btn-danger operator" value=+><h1>+</h1></button>
+                            <br><br>
+                            <button id="button4" class="btn btn-primary number" value=4><h1>4</h1></button>
+                            <button id="button5" class="btn btn-primary number" value=5><h1>5</h1></button>
+                            <button id="button6" class="btn btn-primary number" value=6><h1>6</h1></button>
+                            <button id="buttonMinus" class="btn btn-danger operator" value=-><h1>&minus;</h1></button>
+                            <br><br>
+                            <button id="button7" class="btn btn-primary number" value=7><h1>7</h1></button>
+                            <button id="button8" class="btn btn-primary number" value=8><h1>8</h1></button>
+                            <button id="button9" class="btn btn-primary number" value=9><h1>9</h1></button>
+                            <button id="buttonMultiply" class="btn btn-danger operator" value=*><h1>&times;</h1></button>
+                            <br><br>
+                            <button id="button0" class="btn btn-primary number" value=0 value=0><h1>0</h1></button>
+                            <button id="buttonDivide" class="btn btn-danger operator" value=\><h1>&divide;</h1></button>
+                            <button id="buttonPower" class="btn btn-danger operator" value=^><h1>^</h1></button>
+                            <button id="buttonEqual" class="btn btn-success equal" value==><h1>=</h1></button>
+                            <br><br>
+                            <button id="button0" class="btn btn-default clear" value=clear value=clear><h1>clear</h1></button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Result Panel -->
+        <div class="col-lg-6">
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Result</h3>
+                </div>
+                <div class="panel-body">
+                    <h1 class="firstNumber"></h1>
+                    <h1 class="operator"></h1>
+                    <h1 class="secondNumber"></h1>
+                    <hr>
+                    <h1 id="result"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+var result;
+
+function firstNumber() {
+
+  $("#button1").click(function() {
+    var firstNumber = $("#button1").val();
+    $("h1.firstNumber").html(firstNumber);
+  });
+
+  $("#button2").click(function() {
+    var firstNumber = $("#button2").val();
+    $("h1.firstNumber").html(firstNumber);
+  });
+
+  $("#button3").click(function() {
+    var firstNumber = $("#button3").val();
+    $("h1.firstNumber").html(firstNumber);
+  });
+
+  $("#button4").click(function() {
+    var firstNumber = $("#button4").val();
+    $("h1.firstNumber").html(firstNumber);
+  });
+
+  $("#button5").click(function() {
+    var firstNumber = $("#button5").val();
+    $("h1.firstNumber").html(firstNumber);
+  });
+
+  $("#button6").click(function() {
+    var firstNumber = $("#button6").val();
+    $("h1.firstNumber").html(firstNumber);
+  });
+
+  $("#button7").click(function() {
+    var firstNumber = $("#button7").val();
+    $("h1.firstNumber").html(firstNumber);
+  });
+
+  $("#button8").click(function() {
+    var firstNumber = $("#button8").val();
+    $("h1.firstNumber").html(firstNumber);
+  });
+
+  $("#button9").click(function() {
+    var firstNumber = $("#button9").val();
+    $("h1.firstNumber").html(firstNumber);
+  });
+
+  $("#button0").click(function() {
+    var firstNumber = $("#button0").val();
+    $("h1.firstNumber").html(firstNumber);
+  });
+
+}
+
+function operator() {
+
+  var op = false;
+
+  $("#buttonPlus").click(function() {
+    var operator = $("#buttonPlus").val();
+    $("h1.operator").html(operator);
+  });
+
+  $("#buttonMinus").click(function() {
+    var operator = $("#buttonMinus").val();
+    $("h1.operator").html(operator);
+  });
+
+  $("#buttonMultiply").click(function() {
+    var operator = $("#buttonMultiply").val();
+    $("h1.operator").html(operator);
+  });
+
+  $("#buttonDivide").click(function() {
+    var operator = $("#buttonDivide").val();
+    $("h1.operator").html(operator);
+  });
+
+  $("#buttonPower").click(function() {
+    var operator = $("#buttonPower").val();
+    $("h1.operator").html(operator);
+  });
+
+  op = true;
+}
+
+function secondNumber() {
+
+  var second = false;
+
+  $("#button1").click(function() {
+    var secondNumber = $("#button1").val();
+    $("h1.secondNumber").html(secondNumber);
+  });
+
+  $("#button2").click(function() {
+    var secondNumber = $("#button2").val();
+    $("h1.secondNumber").html(secondNumber);
+  });
+
+  $("#button3").click(function() {
+    var secondNumber = $("#button3").val();
+    $("h1.secondNumber").html(secondNumber);
+  });
+
+  $("#button4").click(function() {
+    var secondNumber = $("#button4").val();
+    $("h1.secondNumber").html(secondNumber);
+  });
+
+  $("#button5").click(function() {
+    var secondNumber = $("#button5").val();
+    $("h1.secondNumber").html(secondNumber);
+  });
+
+  $("#button6").click(function() {
+    var secondNumber = $("#button6").val();
+    $("h1.secondNumber").html(secondNumber);
+  });
+
+  $("#button7").click(function() {
+    var secondNumber = $("#button7").val();
+    $("h1.secondNumber").html(secondNumber);
+  });
+
+  $("#button8").click(function() {
+    var secondNumber = $("#button8").val();
+    $("h1.secondNumber").html(secondNumber);
+  });
+
+  $("#button9").click(function() {
+    var secondNumber = $("#button9").val();
+    $("h1.secondNumber").html(secondNumber);
+  });
+
+  $("#button0").click(function() {
+    var secondNumber = $("#button0").val();
+    $("h1.secondNumber").html(secondNumber);
+  });
+
+  second = true;
+}
+
+$(document).ready(function(){
+
+  var first = false;
+
+  if (first == false) {
+    firstNumber();
+    first == true;
+    console.log(first);
+  }
+
+
+})
+
+</script>
+
+</body>
+</html>
